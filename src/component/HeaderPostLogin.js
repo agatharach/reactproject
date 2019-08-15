@@ -25,10 +25,10 @@ function HeaderPostLogin(props) {
                 <nav className="navbar navbar-expand navbar-light justify-content-between">
                   <ul>
                     <li>
-                      <Link to="/home">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/">Profile</Link>
+                      <Link to="/profile">Profile</Link>
                     </li>
                     <li>
                       <Link to="/" onClick={()=>props.logout();}>Logout</Link>
