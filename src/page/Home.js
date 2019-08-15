@@ -11,10 +11,7 @@ function Home() {
         return (
             <div className="container">
                 <HeaderPraLogin />
-                <div
-                    className="row d-flex align-items-center"
-                    style={{ height: "100 vh" }}
-                >
+                <div className="row d-flex align-items-center homeground">
                     <div className="col-12 align-self-center text-center">
                         <h1>Hello Guys</h1>
                     </div>
