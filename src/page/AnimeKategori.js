@@ -15,8 +15,36 @@ class AnimeCategory extends React.Component {
         { link: "/anime/8", genre: "Drama" },
         { link: "/anime/4", genre: "Comedy" }
       ],
-      headline: []
+      headline: [],
+      keyword: ""
     };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleInput(e) {
+    e.preventDefault();
+    let cari = e.target.value;
+    this.setState({ keyword: cari });
+  }
+
+  handleSearch(e) {
+    e.preventDefault();
+    let self = this;
+    axios
+      .get(
+        "https://api.jikan.moe/v3/search/anime?q=" +
+          self.state.keyword +
+          "genre=" +
+          self.props.match.params.genre
+      )
+      .then(function(response) {
+        self.setState({ headline: response.data.results });
+        console.log(self.headline);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   componentDidMount() {
@@ -77,6 +105,10 @@ class AnimeCategory extends React.Component {
           <div className="row">
             <div className="col-md-2 scroll_bar">
               <ScrollBar isi={this.state.samping} />
+              <form>
+                <input type="text" onChange={this.handleInput} />
+                <button onClick={this.handleSearch}>search</button>
+              </form>
             </div>
             <div className="col-md-10">{rapikan}</div>
           </div>
