@@ -2,8 +2,10 @@ import React from "react";
 // https://pbs.twimg.com/profile_images/887737053542330369/t-JlOC1d_400x400.jpg
 import { Link } from "react-router-dom";
 import "./../asset/css/header.css";
+import { actions } from "./../store";
+import { connect } from "unistore/react";
 
-function HeaderPostLogin() {
+function HeaderPostLogin(props) {
   return (
     <header>
       <div className="container">
@@ -23,13 +25,13 @@ function HeaderPostLogin() {
                 <nav className="navbar navbar-expand navbar-light justify-content-between">
                   <ul>
                     <li>
-                      <Link to="/home">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/">Profile</Link>
+                      <Link to="/profile">Profile</Link>
                     </li>
                     <li>
-                      <Link to="/">Logout</Link>
+                      <Link to="/" onClick={()=>props.logout();}>Logout</Link>
                     </li>
                   </ul>
                 </nav>
@@ -42,4 +44,7 @@ function HeaderPostLogin() {
   );
 }
 
-export default HeaderPostLogin;
+export default connect(
+  "is_login, user_name, email",
+  actions
+)(HeaderPostLogin);
