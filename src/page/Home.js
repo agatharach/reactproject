@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // import { actions } from "../store";
 
 function Home() {
-    const is_login = true;
+    const is_login = false;
     if (is_login) {
         return (
             <div className="container">
