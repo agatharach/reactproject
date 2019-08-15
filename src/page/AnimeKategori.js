@@ -3,7 +3,7 @@ import HeaderPostLogin from "./../component/HeaderPostLogin";
 import ScrollBar from "./../component/ScrollBar";
 import axios from "axios";
 
-class Anime extends React.Component {
+class AnimeCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,11 @@ class Anime extends React.Component {
   componentDidMount() {
     const self = this;
     axios
-      .get("https://api.jikan.moe/v3/search/anime?order_by=score")
+      .get(
+        "https://api.jikan.moe/v3/search/anime?genre=" +
+          self.props.match.params.genre +
+          "&order_by=score"
+      )
       .then(function(response) {
         self.setState({ headline: response.data.results });
         console.log(self.headline);
@@ -31,6 +35,25 @@ class Anime extends React.Component {
         console.log(error);
       });
   }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.match.params.genre !== this.props.match.params.genre) {
+      const self = this;
+      axios
+        .get(
+          "https://api.jikan.moe/v3/search/anime?genre=" +
+            this.props.match.params.genre +
+            "&order_by=score"
+        )
+        .then(function(response) {
+          self.setState({ headline: response.data.results });
+          console.log(self.headline);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  };
 
   render() {
     let rapikan = this.state.headline.map((elm, key) => {
@@ -63,4 +86,4 @@ class Anime extends React.Component {
   }
 }
 
-export default Anime;
+export default AnimeCategory;
