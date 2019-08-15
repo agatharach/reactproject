@@ -112,11 +112,7 @@ class AnimeCategory extends React.Component {
         <HeaderPostLogin />
         <div className="container" style={{ marginTop: 15 }}>
           <div className="row">
-            <div className="col-md-2 scroll_bar">
-              <ScrollBar isi={this.state.samping} />
-            </div>
-            <div className="col-md-8">{rapikan}</div>
-            <div className="col-md-2">
+            <div className="col-md-3 scroll_bar">
               <form>
                 <input
                   type="text"
@@ -135,7 +131,9 @@ class AnimeCategory extends React.Component {
                   search
                 </button>
               </form>
+              <ScrollBar isi={this.state.samping} />
             </div>
+            <div className="col-md-9">{rapikan}</div>
           </div>
         </div>
       </div>
