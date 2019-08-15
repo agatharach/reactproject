@@ -12,7 +12,7 @@ function HeaderPostLogin() {
             <div className="header-logo">
               <img
                 src="https://pbs.twimg.com/profile_images/887737053542330369/t-JlOC1d_400x400.jpg"
-                width="50px"
+                width="100px"
               />
             </div>
           </div>
