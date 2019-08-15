@@ -21,19 +21,7 @@ export const actions = store => ({
   setEmail(state, email) {
     return { email: email };
   },
-  tambahTengah(state, arr) {
-    return { beritaTengah: arr };
-  },
-  tambahSamping(state, arr) {
-    return { beritaSamping: arr };
-  },
-  tambahKategori(state, arr) {
-    return { kategori: arr };
+  setFoto(state, url) {
+    return { url_foto: url };
   }
-  //   tambahEntertainment(state, arr) {
-  //     return { kategori.entertainment : arr };
-  //   },
-  //   tambahSports(state, arr) {
-  //     return { kategori.sports : arr };
-  //   }
 });
