@@ -2,7 +2,7 @@ import React from "react";
 import HeaderPostLogin from "./../component/HeaderPostLogin";
 import ScrollBar from "./../component/ScrollBar";
 import axios from "axios";
-
+import "./../asset/css/header.css";
 class AnimeCategory extends React.Component {
   constructor(props) {
     super(props);
@@ -86,12 +86,21 @@ class AnimeCategory extends React.Component {
   render() {
     let rapikan = this.state.headline.map((elm, key) => {
       return (
-        <div className="row" style={{ marginTop: 5 }}>
+        <div
+          className="row"
+          style={{
+            marginTop: 5,
+            boxShadow: " 2px 2px 2px 2px #888888",
+            padding: 5
+          }}
+        >
           <div className="col-md-4">
             <img src={elm.image_url} />
           </div>
           <div className="col-md-8">
-            <a href={elm.url}>{elm.title}</a>
+            <a href={elm.url} style={{ fontWeight: 700, fontSize: 20 }}>
+              {elm.title}
+            </a>
             <p>{elm.score}</p>
             <p>{elm.synopsis}</p>
           </div>
@@ -101,16 +110,32 @@ class AnimeCategory extends React.Component {
     return (
       <div>
         <HeaderPostLogin />
-        <div className="container">
+        <div className="container" style={{ marginTop: 15 }}>
           <div className="row">
             <div className="col-md-2 scroll_bar">
               <ScrollBar isi={this.state.samping} />
+            </div>
+            <div className="col-md-8">{rapikan}</div>
+            <div className="col-md-2">
               <form>
-                <input type="text" onChange={this.handleInput} />
-                <button onClick={this.handleSearch}>search</button>
+                <input
+                  type="text"
+                  onChange={this.handleInput}
+                  style={{ width: 180 }}
+                />
+                <button
+                  onClick={this.handleSearch}
+                  className="btn-primary"
+                  style={{
+                    backgroundColor: "#6fc9ff",
+                    borderRadius: 6,
+                    borderColor: "#6fc9ff"
+                  }}
+                >
+                  search
+                </button>
               </form>
             </div>
-            <div className="col-md-10">{rapikan}</div>
           </div>
         </div>
       </div>
