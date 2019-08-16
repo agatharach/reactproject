@@ -4,13 +4,15 @@ import "./App.css";
 import { Provider } from "unistore/react";
 import { store } from "./store";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import HeaderPostLogin from "./component/HeaderPostLogin";
-import HeaderPraLogin from "./component/HeaderPraLogin";
 import Home from "./page/Home";
 import SignIn from "./page/SignIn";
 import Profile from "./page/Profile";
 import Anime from "./page/Anime";
 import AnimeKategori from "./page/AnimeKategori";
+import Manga from "./page/Manga";
+import MangaKategori from "./page/MangaKategori";
+import NotFound from "./page/NotFound";
+
 import Book from './page/Book';
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
                     <Route exact path="/anime" component={Anime} />
                     <Route path="/anime/:genre" component={AnimeKategori} />
                     <Route path="/book" component={Book} />
+      <Route exact path="/manga" component={Manga} />
+          <Route path="/manga/:genre" component={MangaKategori} />
+      <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>
         </Provider>
