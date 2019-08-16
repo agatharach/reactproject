@@ -112,8 +112,27 @@ class AnimeCategory extends React.Component {
         <HeaderPostLogin />
         <div className="container" style={{ marginTop: 15 }}>
           <div className="row">
-            <div className="col-md-3 scroll_bar">
-              <form>
+            <div
+              className="col-md-6"
+              style={{
+                position: "sticky",
+                top: 0,
+                backgroundColor: "white",
+                zIndex: 1
+              }}
+            >
+              <ScrollBar isi={this.state.samping} />
+            </div>
+            <div
+              className="col-md-6"
+              style={{
+                position: "sticky",
+                top: 0,
+                backgroundColor: "white",
+                zIndex: 1
+              }}
+            >
+              <form className="float-right">
                 <input
                   type="text"
                   onChange={this.handleInput}
@@ -131,9 +150,8 @@ class AnimeCategory extends React.Component {
                   search
                 </button>
               </form>
-              <ScrollBar isi={this.state.samping} />
             </div>
-            <div className="col-md-9">{rapikan}</div>
+            <div className="col-md-12">{rapikan}</div>
           </div>
         </div>
       </div>
