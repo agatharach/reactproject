@@ -49,6 +49,7 @@ function Home(props) {
             </div>
         );
     }
+
 }
 export default connect(
     "is_login",
