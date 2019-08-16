@@ -25,10 +25,10 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/anime" component={Anime} />
                     <Route path="/anime/:genre" component={AnimeKategori} />
-                    <Route path="/book" component={Book} />
-      <Route exact path="/manga" component={Manga} />
-          <Route path="/manga/:genre" component={MangaKategori} />
-      <Route component={NotFound} />
+                    <Route path="/books" component={Books} />
+                    <Route exact path="/manga" component={Manga} />
+                    <Route path="/manga/:genre" component={MangaKategori} />
+                    <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>
         </Provider>

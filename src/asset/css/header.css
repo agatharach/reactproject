@@ -69,8 +69,8 @@ header .header-menu ul li a {
     font-family: "Lobster", cursive;
 }
 body {
-  font-family: Muli, sans-serif;
-  background-image: url("https://i.pinimg.com/originals/3c/7a/fc/3c7afc1b68c0f8cc367dd9d0f1f383de.jpg");
+    font-family: Muli, sans-serif;
+    background-image: url("https://i.pinimg.com/originals/3c/7a/fc/3c7afc1b68c0f8cc367dd9d0f1f383de.jpg");
 }
 /* test */
 .kategori {
@@ -113,13 +113,17 @@ body {
     height: 50px;
   } */
 
-  header .header-menu ul li {
-    padding: 3px;
-  }
-  .search {
-    float: none;
-  }
-  #notfoundpic {
-    width: 300px;
-  }
+    header .header-menu ul li {
+        padding: 3px;
+    }
+    .search {
+        float: none;
+    }
+    #notfoundpic {
+        width: 300px;
+    }
+
+    #left-image {
+        display: none;
+    }
 }
