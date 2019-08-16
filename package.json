@@ -9,8 +9,11 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.1",
-    "unistore": "^3.4.1"
+    "react-xml-parser": "^1.1.3",
+    "unistore": "^3.4.1",
+    "xmldom": "^0.1.27"
   },
+  "proxy": "https://www.goodreads.com/search/index.xml?key=y1obKSI5hlBSWDILdLGMjg",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
