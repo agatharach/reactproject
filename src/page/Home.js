@@ -42,19 +42,26 @@ function Home(props) {
             <div>
                 <HeaderPraLogin />
                 <div className="container">
-                    <div className="row d-flex align-items-center homeground">
-                        <div className="col-12 align-self-center text-center">
-                            <h1>Hello Guys</h1>
-                            <br />
-                            <Quotes />
-                        </div>
-                    </div>
+                     <div
+          className="row d-flex align-items-center homeground"
+          style={{ backgroundColor: "white" }}
+        >
+          <div className="col-12 align-self-center text-center">
+            <h1 style={{ color: "#8FB2E2", fontSize: 60 }}>
+              Welcome to ChillZone
+            </h1>
+            <p style={{ fontSize: 20 }}>Please proceed to login page</p>
+            <br />
+            <Quotes />
+          </div>
+        </div>
                 </div>
             </div>
         );
     }
+
 }
 export default connect(
-    "is_login",
-    actions
+  "is_login",
+  actions
 )(Home);

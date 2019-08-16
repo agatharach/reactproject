@@ -3,31 +3,31 @@ import { connect } from "unistore/react";
 import { actions } from "../store";
 
 class SignIn extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleInput1 = this.handleInput1.bind(this);
-        this.handleInput2 = this.handleInput2.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.handleInput1 = this.handleInput1.bind(this);
+    this.handleInput2 = this.handleInput2.bind(this);
+  }
 
-    handleInput1(event) {
-        const self = this;
-        if (event.target.value.length > 0) {
-            self.props.setUser(event.target.value);
-        }
+  handleInput1(event) {
+    const self = this;
+    if (event.target.value.length > 0) {
+      self.props.setUser(event.target.value);
     }
+  }
 
-    handleInput2(event) {
-        const self = this;
-        if (event.target.value.length > 0) {
-            self.props.setEmail(event.target.value);
-        }
+  handleInput2(event) {
+    const self = this;
+    if (event.target.value.length > 0) {
+      self.props.setEmail(event.target.value);
     }
+  }
 
-    postLogin() {
-        const self = this;
-        self.props.login();
-        self.props.history.replace("/profile");
-    }
+  postLogin() {
+    const self = this;
+    self.props.login();
+    self.props.history.replace("/profile");
+  }
 
     render() {
         return (
@@ -103,12 +103,17 @@ class SignIn extends React.Component {
                             </div>
                         </div>
                     </div>
+
                 </div>
+              </div>
             </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 export default connect(
-    "is_login,user_name,email",
-    actions
+  "is_login,user_name,email",
+  actions
 )(SignIn);
