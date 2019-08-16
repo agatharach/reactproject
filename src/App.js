@@ -14,6 +14,7 @@ import AnimeKategori from "./page/AnimeKategori";
 import Coba from "./page/coba";
 import Manga from "./page/Manga";
 import MangaKategori from "./page/MangaKategori";
+import NotFound from "./page/NotFound";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/books" component={Coba} />
           <Route exact path="/manga" component={Manga} />
           <Route path="/manga/:genre" component={MangaKategori} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>
