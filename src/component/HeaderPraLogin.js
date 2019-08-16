@@ -8,7 +8,7 @@ function HeaderPraLogin() {
     <header style={{ boxShadow: " 2px 2px 2px 2px #888888", marginBottom: 15 }}>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-2 col-sm-6">
+          <div className="col-md-6 col-sm-6">
             <div className="header-logo">
               <img
                 src="https://pbs.twimg.com/profile_images/887737053542330369/t-JlOC1d_400x400.jpg"
@@ -16,8 +16,7 @@ function HeaderPraLogin() {
               />
             </div>
           </div>
-          <div className="col-md-5">kosonggg</div>
-          <div className="col-md-5 col-sm-6 align-items-center">
+          <div className="col-md-6 col-sm-6 align-items-center">
             <div className="float-right">
               <div className="header-menu">
                 <nav className="navbar navbar-expand navbar-light justify-content-between">

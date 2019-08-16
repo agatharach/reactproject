@@ -118,13 +118,13 @@ class AnimeCategory extends React.Component {
                 position: "sticky",
                 top: 0,
                 backgroundColor: "white",
-                zIndex: 1
+                zIndex: 2
               }}
             >
               <ScrollBar isi={this.state.samping} />
             </div>
             <div
-              className="col-md-6"
+              className="col-md-6 search"
               style={{
                 position: "sticky",
                 top: 0,

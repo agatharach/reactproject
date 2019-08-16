@@ -91,7 +91,7 @@ class Anime extends React.Component {
                 position: "sticky",
                 top: 0,
                 backgroundColor: "white",
-                zIndex: 1
+                zIndex: 2
               }}
             >
               <ScrollBar isi={this.state.samping} />
@@ -124,28 +124,7 @@ class Anime extends React.Component {
                 </button>
               </form>
             </div>
-            {/* <div className="col-md-3 scroll_bar">
-              <form>
-                <input
-                  type="text"
-                  onChange={this.handleInput}
-                  style={{ width: 180 }}
-                />
-                <button
-                  onClick={this.handleSearch}
-                  className="btn-primary"
-                  style={{
-                    backgroundColor: "#6fc9ff",
-                    borderRadius: 6,
-                    borderColor: "#6fc9ff"
-                  }}
-                >
-                  search
-                </button>
-              </form>
-              <ScrollBar isi={this.state.samping} />
-            </div> */}
-            <div className="col-md-">{rapikan}</div>
+            <div className="col-md-12">{rapikan}</div>
           </div>
         </div>
       </div>
