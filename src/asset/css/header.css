@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+
 header {
     background-color: white;
 }
@@ -34,5 +36,6 @@ header .header-menu ul li a {
 }
 
 .homeground {
+    font-family: "Lobster", cursive;
     height: 85vh;
 }
