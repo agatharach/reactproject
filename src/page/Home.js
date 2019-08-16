@@ -60,9 +60,9 @@ function Home(props) {
                             className="col-md-4 col-sm-12 text-center"
                             style={{ marginTop: 10 }}
                         >
-                            <Link to="/book">
+                            <Link to="/books">
                                 <img
-                                    src="https://www.anime-planet.com/images/anime/covers/fullmetal-alchemist-437.jpg"
+                                    src="https://media.self.com/photos/5beb479215ff484dd9b66f5d/master/w_752,c_limit/rage%2520becomes%2520her.jpg"
                                     width="268px"
                                     height="402px"
                                     alt="anime"
