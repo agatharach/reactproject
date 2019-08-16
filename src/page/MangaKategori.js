@@ -91,7 +91,8 @@ class MangaCategory extends React.Component {
           style={{
             marginTop: 5,
             boxShadow: " 2px 2px 2px 2px #888888",
-            padding: 5
+            padding: 5,
+            backgroundColor: "white"
           }}
         >
           <div className="col-md-4">
