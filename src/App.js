@@ -12,8 +12,7 @@ import AnimeKategori from "./page/AnimeKategori";
 import Manga from "./page/Manga";
 import MangaKategori from "./page/MangaKategori";
 import NotFound from "./page/NotFound";
-
-import Book from './page/Book';
+import Book from "./page/Book";
 
 function App() {
     return (
@@ -25,7 +24,7 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/anime" component={Anime} />
                     <Route path="/anime/:genre" component={AnimeKategori} />
-                    <Route path="/books" component={Books} />
+                    <Route path="/books" component={Book} />
                     <Route exact path="/manga" component={Manga} />
                     <Route path="/manga/:genre" component={MangaKategori} />
                     <Route component={NotFound} />

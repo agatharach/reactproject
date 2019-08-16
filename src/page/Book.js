@@ -111,7 +111,7 @@ export default class Book extends React.Component {
         return (
             <div>
                 <HeaderPostLogin />
-                <div className="container">
+                <div classNameName="container">
                     <div className="row justify-content-center">
                         <div className="col-12 text-center">
                             <form className="float-right">
@@ -139,19 +139,24 @@ export default class Book extends React.Component {
                             return (
                                 <div className="col-md-4">
                                     <div
-                                        class="card m-2"
+                                        className="card m-2"
                                         style={{
-                                            width: "18rem",
+                                            width: 286,
                                             "border radius": "5px"
                                         }}
                                     >
                                         <img
                                             src={this.state.hasil.gambar[index]}
-                                            class="card-img-top"
+                                            className="card-img-top"
                                         />
-                                        <div class="card-body">
-                                            <h3 class="card-title">{value}</h3>
-                                            <p class="card-text">
+                                        <div
+                                            className="card-body"
+                                            style={{ height: 290 }}
+                                        >
+                                            <h3 className="card-title">
+                                                {value}
+                                            </h3>
+                                            <p className="card-text">
                                                 Penulis :{" "}
                                                 {
                                                     this.state.hasil.penulis[
@@ -159,18 +164,18 @@ export default class Book extends React.Component {
                                                     ]
                                                 }
                                             </p>
-                                            <p class="card-text">
+                                            <p className="card-text">
                                                 Tahun Terbit :{" "}
                                                 {
                                                     this.state.hasil
                                                         .tahun_terbit[index]
                                                 }
                                             </p>
-                                            <p class="card-text">
+                                            <p className="card-text">
                                                 Rating :{" "}
                                                 {this.state.hasil.rating[index]}
                                             </p>
-                                            {/* <a href="#" class="btn btn-primary">
+                                            {/* <a href="#" className="btn btn-primary">
                         Go somewhere
                       </a> */}
                                         </div>
