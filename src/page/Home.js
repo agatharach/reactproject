@@ -37,19 +37,22 @@ function Home(props) {
     } else {
         console.log(props.is_login);
         return (
-            <div className="container">
+            <div>
                 <HeaderPraLogin />
-                <div className="row d-flex align-items-center homeground">
-                    <div className="col-12 align-self-center text-center">
-                        <h1>Hello Guys</h1>
-                        <br />
-                        <Quotes />
+                <div className="container">
+                    <div className="row d-flex align-items-center homeground">
+                        <div className="col-12 align-self-center text-center">
+                            <h1>Hello Guys</h1>
+                            <br />
+                            <div className="row quotes">
+                                <Quotes />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
-
 }
 export default connect(
     "is_login",
