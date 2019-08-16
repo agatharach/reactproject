@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
 @font-face {
   font-family: "Muli";
   font-style: normal;
@@ -53,7 +54,8 @@ header .header-menu ul li a {
 }
 
 .homeground {
-  height: 85vh;
+    font-family: "Lobster", cursive;
+    height: 85vh;
 }
 
 body {

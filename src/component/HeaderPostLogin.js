@@ -46,6 +46,6 @@ function HeaderPostLogin(props) {
 }
 
 export default connect(
-  "is_login, user_name, email",
-  actions
+    "is_login, user_name, email",
+    actions
 )(HeaderPostLogin);
