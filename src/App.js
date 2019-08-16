@@ -11,7 +11,7 @@ import SignIn from "./page/SignIn";
 import Profile from "./page/Profile";
 import Anime from "./page/Anime";
 import AnimeKategori from "./page/AnimeKategori";
-import Coba from './page/coba';
+import Book from './page/Book';
 
 function App() {
     return (
@@ -23,8 +23,7 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/anime" component={Anime} />
                     <Route path="/anime/:genre" component={AnimeKategori} />
-                    <Route path="/books" component={Coba} />
-
+                    <Route path="/book" component={Book} />
                 </Switch>
             </BrowserRouter>
         </Provider>
