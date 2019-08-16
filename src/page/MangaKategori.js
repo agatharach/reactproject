@@ -3,17 +3,17 @@ import HeaderPostLogin from "./../component/HeaderPostLogin";
 import ScrollBar from "./../component/ScrollBar";
 import axios from "axios";
 import "./../asset/css/header.css";
-class AnimeCategory extends React.Component {
+class MangaCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       samping: [
-        { link: "/anime/1", genre: "Action" },
-        { link: "/anime/14", genre: "Horror" },
-        { link: "/anime/24", genre: "Sci-fi" },
-        { link: "/anime/22", genre: "Romance" },
-        { link: "/anime/8", genre: "Drama" },
-        { link: "/anime/4", genre: "Comedy" }
+        { link: "/manga/1", genre: "Action" },
+        { link: "/manga/14", genre: "Horror" },
+        { link: "/manga/24", genre: "Sci-fi" },
+        { link: "/manga/22", genre: "Romance" },
+        { link: "/manga/8", genre: "Drama" },
+        { link: "/manga/4", genre: "Comedy" }
       ],
       headline: [],
       keyword: ""
@@ -33,7 +33,7 @@ class AnimeCategory extends React.Component {
     let self = this;
     axios
       .get(
-        "https://api.jikan.moe/v3/search/anime?q=" +
+        "https://api.jikan.moe/v3/search/manga?q=" +
           self.state.keyword +
           "genre=" +
           self.props.match.params.genre
@@ -51,7 +51,7 @@ class AnimeCategory extends React.Component {
     const self = this;
     axios
       .get(
-        "https://api.jikan.moe/v3/search/anime?genre=" +
+        "https://api.jikan.moe/v3/search/manga?genre=" +
           self.props.match.params.genre +
           "&order_by=score"
       )
@@ -69,7 +69,7 @@ class AnimeCategory extends React.Component {
       const self = this;
       axios
         .get(
-          "https://api.jikan.moe/v3/search/anime?genre=" +
+          "https://api.jikan.moe/v3/search/manga?genre=" +
             this.props.match.params.genre +
             "&order_by=score"
         )
@@ -160,4 +160,4 @@ class AnimeCategory extends React.Component {
   }
 }
 
-export default AnimeCategory;
+export default MangaCategory;

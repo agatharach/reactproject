@@ -3,23 +3,37 @@ import HeaderPostLogin from "./../component/HeaderPostLogin";
 import ScrollBar from "./../component/ScrollBar";
 import axios from "axios";
 import "./../asset/css/header.css";
-class AnimeCategory extends React.Component {
+
+class Manga extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       samping: [
-        { link: "/anime/1", genre: "Action" },
-        { link: "/anime/14", genre: "Horror" },
-        { link: "/anime/24", genre: "Sci-fi" },
-        { link: "/anime/22", genre: "Romance" },
-        { link: "/anime/8", genre: "Drama" },
-        { link: "/anime/4", genre: "Comedy" }
+        { link: "/manga/1", genre: "Action" },
+        { link: "/manga/14", genre: "Horror" },
+        { link: "/manga/24", genre: "Sci-fi" },
+        { link: "/manga/22", genre: "Romance" },
+        { link: "/manga/8", genre: "Drama" },
+        { link: "/manga/4", genre: "Comedy" }
       ],
       headline: [],
       keyword: ""
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  componentDidMount() {
+    const self = this;
+    axios
+      .get("https://api.jikan.moe/v3/search/manga?order_by=score")
+      .then(function(response) {
+        self.setState({ headline: response.data.results });
+        console.log(self.headline);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   handleInput(e) {
@@ -32,12 +46,7 @@ class AnimeCategory extends React.Component {
     e.preventDefault();
     let self = this;
     axios
-      .get(
-        "https://api.jikan.moe/v3/search/anime?q=" +
-          self.state.keyword +
-          "genre=" +
-          self.props.match.params.genre
-      )
+      .get("https://api.jikan.moe/v3/search/manga?q=" + self.state.keyword)
       .then(function(response) {
         self.setState({ headline: response.data.results });
         console.log(self.headline);
@@ -46,42 +55,6 @@ class AnimeCategory extends React.Component {
         console.log(error);
       });
   }
-
-  componentDidMount() {
-    const self = this;
-    axios
-      .get(
-        "https://api.jikan.moe/v3/search/anime?genre=" +
-          self.props.match.params.genre +
-          "&order_by=score"
-      )
-      .then(function(response) {
-        self.setState({ headline: response.data.results });
-        console.log(self.headline);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
-
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevProps.match.params.genre !== this.props.match.params.genre) {
-      const self = this;
-      axios
-        .get(
-          "https://api.jikan.moe/v3/search/anime?genre=" +
-            this.props.match.params.genre +
-            "&order_by=score"
-        )
-        .then(function(response) {
-          self.setState({ headline: response.data.results });
-          console.log(self.headline);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    }
-  };
 
   render() {
     let rapikan = this.state.headline.map((elm, key) => {
@@ -125,7 +98,7 @@ class AnimeCategory extends React.Component {
               <ScrollBar isi={this.state.samping} />
             </div>
             <div
-              className="col-md-6 search"
+              className="col-md-6"
               style={{
                 position: "sticky",
                 top: 0,
@@ -160,4 +133,4 @@ class AnimeCategory extends React.Component {
   }
 }
 
-export default AnimeCategory;
+export default Manga;
