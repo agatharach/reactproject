@@ -11,23 +11,26 @@ import SignIn from "./page/SignIn";
 import Profile from "./page/Profile";
 import Anime from "./page/Anime";
 import AnimeKategori from "./page/AnimeKategori";
-import Coba from './page/coba';
+import Coba from "./page/coba";
+import Manga from "./page/Manga";
+import MangaKategori from "./page/MangaKategori";
 
 function App() {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/login" component={SignIn} />
-                    <Route exact path="/profile" component={Profile} />
-                    <Route exact path="/anime" component={Anime} />
-                    <Route path="/anime/:genre" component={AnimeKategori} />
-                    <Route path="/books" component={Coba} />
-
-                </Switch>
-            </BrowserRouter>
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={SignIn} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/anime" component={Anime} />
+          <Route path="/anime/:genre" component={AnimeKategori} />
+          <Route path="/books" component={Coba} />
+          <Route exact path="/manga" component={Manga} />
+          <Route path="/manga/:genre" component={MangaKategori} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
 }
 export default App;
