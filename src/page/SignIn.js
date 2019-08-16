@@ -29,52 +29,81 @@ class SignIn extends React.Component {
     self.props.history.replace("/profile");
   }
 
-  render() {
-    return (
-      <div>
-        <div>
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-5 col-12 d-flex align-items-center nol">
-                <img
-                  src="https://wallpapercave.com/wp/wp1892100.jpg"
-                  width="537px"
-                  height="600px"
-                  alt=""
-                  id="left-image"
-                />
-                <div className="box-biru" />
-              </div>
+    render() {
+        return (
+            <div>
+                <div>
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-5 col-5 d-flex align-items-center nol">
+                                <img
+                                    src="https://wallpapercave.com/wp/wp1892100.jpg"
+                                    width="100%"
+                                    height="650px"
+                                    alt=""
+                                    id="left-image"
+                                />
+                            </div>
 
-              <div className="col-md-7 col-12 ">
-                <div className="login">
-                  <section className="content signin">
-                    <form onSubmit={this.handleSubmit}>
-                      <h4>Sign In</h4>
-                      <div>
-                        <input
-                          type="text"
-                          name="username"
-                          placeholder="Username"
-                          onChange={this.handleInput1}
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Email"
-                          onChange={this.handleInput2}
-                        />
-                      </div>
-                      <button
-                        className="btn btn-secondary"
-                        onClick={() => this.postLogin()}
-                      >
-                        SignIn
-                      </button>
-                    </form>
-                  </section>
+                            <div className="col-md-7">
+                                <div className="row d-flex align-items-center homeground">
+                                    <div className="col-md-12 align-self-center text-center">
+                                        <div className="login">
+                                            <section className="content signin d-flex justify-content-center">
+                                                <form
+                                                    style={{
+                                                        height: "310px",
+                                                        width: 400
+                                                    }}
+                                                    onSubmit={this.handleSubmit}
+                                                    className="border p-5 align-self-center text-center"
+                                                >
+                                                    <h4>Sign In</h4>
+                                                    <div>
+                                                        <input
+                                                            style={{
+                                                                width: "100%"
+                                                            }}
+                                                            type="text"
+                                                            name="username"
+                                                            placeholder="Username"
+                                                            onChange={
+                                                                this
+                                                                    .handleInput1
+                                                            }
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            style={{
+                                                                width: "100%"
+                                                            }}
+                                                            type="email"
+                                                            name="email"
+                                                            placeholder="Email"
+                                                            onChange={
+                                                                this
+                                                                    .handleInput2
+                                                            }
+                                                        />
+                                                    </div>
+                                                    <button
+                                                        className="btn btn-secondary"
+                                                        onClick={() =>
+                                                            this.postLogin()
+                                                        }
+                                                    >
+                                                        SignIn
+                                                    </button>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
               </div>
             </div>

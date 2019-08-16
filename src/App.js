@@ -4,8 +4,6 @@ import "./App.css";
 import { Provider } from "unistore/react";
 import { store } from "./store";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import HeaderPostLogin from "./component/HeaderPostLogin";
-import HeaderPraLogin from "./component/HeaderPraLogin";
 import Home from "./page/Home";
 import SignIn from "./page/SignIn";
 import Profile from "./page/Profile";
