@@ -9,28 +9,29 @@ import SignIn from "./page/SignIn";
 import Profile from "./page/Profile";
 import Anime from "./page/Anime";
 import AnimeKategori from "./page/AnimeKategori";
-import Coba from "./page/coba";
 import Manga from "./page/Manga";
 import MangaKategori from "./page/MangaKategori";
 import NotFound from "./page/NotFound";
 
+import Book from './page/Book';
+
 function App() {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={SignIn} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/anime" component={Anime} />
-          <Route path="/anime/:genre" component={AnimeKategori} />
-          <Route path="/books" component={Coba} />
-          <Route exact path="/manga" component={Manga} />
+    return (
+        <Provider store={store}>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/login" component={SignIn} />
+                    <Route exact path="/profile" component={Profile} />
+                    <Route exact path="/anime" component={Anime} />
+                    <Route path="/anime/:genre" component={AnimeKategori} />
+                    <Route path="/book" component={Book} />
+      <Route exact path="/manga" component={Manga} />
           <Route path="/manga/:genre" component={MangaKategori} />
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
-  );
+      <Route component={NotFound} />
+                </Switch>
+            </BrowserRouter>
+        </Provider>
+    );
 }
 export default App;
